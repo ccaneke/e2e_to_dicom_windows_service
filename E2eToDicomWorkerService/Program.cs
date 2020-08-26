@@ -19,6 +19,6 @@ namespace E2eToDicomWorkerService
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
-                });
+                }).UseWindowsService();
     }
 }
