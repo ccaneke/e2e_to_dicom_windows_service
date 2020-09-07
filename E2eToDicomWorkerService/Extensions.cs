@@ -10,7 +10,7 @@ namespace E2eToDicomWorkerService
         {
             IEnumerator<Process> enumerator = processes.GetEnumerator();
 
-            while (!enumerator.MoveNext())
+            while (enumerator.MoveNext())
             {
                 enumerator.Current.WaitForExit();
             }
