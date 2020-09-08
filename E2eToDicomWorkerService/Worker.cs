@@ -83,41 +83,5 @@ namespace E2eToDicomWorkerService
 
             return e2eAnonymizer;
         }
-
-        public static string GetE2EFileInterpreterPath()
-        {
-            // Environment must be the environment of the login non-interactive shell, this environment is set only when you first login
-            // to MacOS.
-            string systemPath = Environment.GetEnvironmentVariable("PATH");
-
-            //Process echo = new Process();
-
-            //echo.StartInfo = new ProcessStartInfo("echo", "$PATH");
-
-            //echo.StartInfo.UseShellExecute = true;
-
-            //var test = echo.StartInfo.EnvironmentVariables;
-            //var test2 = echo.StartInfo.Environment;
-            //echo.StartInfo.RedirectStandardOutput/*RedirectStandardError*/ = true;
-
-            //echo.Start();
-
-            //StreamReader sr = echo.StandardOutput/*StandardError*/;
-
-            //string output = sr.ReadToEnd();
-
-            /*string[] paths = systemPath.Split(':');*/
-
-            OSPlatform os = OSPlatform.Windows;
-
-            string[] paths = RuntimeInformation.IsOSPlatform(os) ? systemPath.Split(';') : systemPath.Split(':');
-
-            string test = "C:\\Users\\Christopher Aneke\\Desktop\\exeDirectories\\e2eFileInterpreterPublish";
-            bool contains = test.Contains("E2EFileInterpreter", StringComparison.CurrentCultureIgnoreCase/*InvariantCultureIgnoreCase*//*OrdinalIgnoreCase*/) /*test.IndexOf("E2EFileInterpreter", StringComparison.OrdinalIgnoreCase) >= 0*/;
-
-            string e2eFileInterpreterPath = paths.Single<string>(path => path.Contains("E2EFileInterpreter", StringComparison.InvariantCultureIgnoreCase));
-
-            return e2eFileInterpreterPath;
-        }
     }
 }
