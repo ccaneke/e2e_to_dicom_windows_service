@@ -21,16 +21,9 @@ namespace E2eToDicomWorkerService
         {
             _logger = logger;
         }
-        // Fixed Json property name in config file so that it matches property name in the .Net class
-        // Fixed DirectoryInfo.GetFiles search pattern (i.e. search string).
-        // Fixed: Debug StartProcess method
-        // Fixed: Save all images from each parse of a .E2E file to a unique folder named after the same GUID used for the name of the
-        // anonymized e2es directory and dicom output directory.
-        // Fixed: Wait for all E2EFileInterpreter processes to finish, and log a message to the application output window.
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            //Debug
-
             string exeDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string configFilePath = Path.Combine(exeDir, "config.json");
 
@@ -64,17 +57,8 @@ namespace E2eToDicomWorkerService
 
             string exePath = exeDirectoryPath + @"\E2EFileInterpreter.exe";
             
-            ProcessStartInfo startInfo = new ProcessStartInfo(/*"E2EFileInterpreter.exe"*/exePath, arguments: fi);
-            //startInfo.WorkingDirectory = exeDirectoryPath;//GetE2EFileInterpreterPath();
-
-            /*
-             * For MacOS
-            startInfo.UseShellExecute = true;
-
-            string wd = startInfo.WorkingDirectory;
-
-            startInfo.WorkingDirectory = GetE2EFileInterpreterPath();*/
-            //startInfo.Work
+            ProcessStartInfo startInfo = new ProcessStartInfo(exePath, arguments: fi);
+            
             startInfo.UseShellExecute = false;
 
             e2eAnonymizer.StartInfo = startInfo;
