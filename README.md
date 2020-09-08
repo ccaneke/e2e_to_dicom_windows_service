@@ -11,7 +11,7 @@ Installation
 
 5. Install the E2eFileInterpreter Windows Service by running the standard Windows Service Installer using the command:
 
- ```
+```
 sc create <ServiceName> BinPath=C:\full\path\to\E2eFileInterpreter\Windows\Service\binary\bundle\dir\WindowsServiceE2eFileInterpreter.exe
 ```
 
