@@ -1,3 +1,6 @@
+# Bulk .e2e file parser, anonymizer, and DICOM exporter
+Automatically parses, anonymizes, and exports a DICOM file from one or more .e2e files.
+
 Installation
 ============
 
@@ -35,3 +38,6 @@ sc stop <ServiceName>
 ```
 sc delete <ServiceName>
 ```
+
+# Data
+The data folder specified in the configuration file for the E2eFileInterpreter Windows Service must contain only .e2e files.
