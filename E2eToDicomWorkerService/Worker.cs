@@ -46,7 +46,13 @@ namespace E2eToDicomWorkerService
             _logger.LogInformation(processes.AllProcessesCompleted());
 
         }
-
+        // Todo: Use LINQ to compare file listings in the E2E source directory and anonymized E2E directory,
+        // and return only files that are in the E2E source directory but not in the anonymized E2E
+        // directory. These distinct files are the only files that will be anonymized the next time the
+        // E2EFileInterpreter Windows Service is run. So that if you have 6000 files in the E2E source
+        // directory, every time the E2EFileInterpreter Windows Service is run instead of processing 6000
+        // files, only newly added files (i.e. new files added to the E2E source directory) are processed.
+        // This update will increase the efficiency efficiency of the bulk E2E processing exponentially.
         private static Process StartProcess(string fi, ConfigFileModel settings)
         {
             fi = "\"" + fi + '\"';
