@@ -3,19 +3,28 @@ Automatically parses, anonymizes, and exports a DICOM file from one or more .e2e
 
 Installation
 ============
+1. Clone [GitHub repository](https://github.com/ccaneke/e2e_to_dicom_windows_service "GitHub repo")
 
-1. Download E2eFileInterpreter binary bundle.
- 
-2. Download Windows Service binary bundle.
+2. Copy the following E2eFileInterpreter binaries directory to a directory on the Windows system to avoid Windows and Linux path conflicts.
 
-3. Configure the E2eFileInterpreter program using the config file in the E2eFileInterpreter binary bundle.
+`E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64` 
 
-4. Configure the E2eFileInterpreter Windows Service using the config file in the E2eFileInterpreter Windows Service binary bundle.
+3. Copy the following Windows Service binaries directory to a directory on the Windows system to avoid Windows and Linux path conflicts.
 
-5. Install the E2eFileInterpreter Windows Service by running the standard Windows Service Installer using the command:
+`E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64`
+
+4. Configure the E2eFileInterpreter program using the config file in the E2eFileInterpreter binaries directory.
+
+`E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64/config.json`
+
+5. Configure the E2eToDicomWorkerService Windows Service using the config file in the E2eFileInterpreter Windows Service binaries directory.
+
+`E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64/config.json`
+
+6. Install the E2eToDicomWorkerService Windows Service by running the standard Windows Service Installer using the command:
 
 ```
-sc create <ServiceName> BinPath=C:\full\path\to\E2eFileInterpreter\Windows\Service\binary\bundle\dir\WindowsServiceE2eFileInterpreter.exe
+sc create <ServiceName> BinPath=C:\path\to\win-x64\E2eToDicomWorkerService.exe
 ```
 
 Usage
