@@ -11,7 +11,7 @@ Installation
 E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64` 
 ```
 
-3. Copy the following Windows Service binaries directory to a directory on the Windows system to avoid Windows and Linux path conflicts.
+3. Copy the following E2eToDicomWorkerService Windows Service binaries directory to a directory on the Windows system to avoid Windows and Linux path conflicts.
 
 ```
 E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64`
