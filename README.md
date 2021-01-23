@@ -7,19 +7,19 @@ Installation
 
 2. Copy the following E2eFileInterpreter binaries directory to a directory on the Windows system to avoid Windows and Linux path conflicts.
 
-`E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64` 
+ `E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64` 
 
 3. Copy the following Windows Service binaries directory to a directory on the Windows system to avoid Windows and Linux path conflicts.
 
-`E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64`
+ `E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64`
 
 4. Configure the E2eFileInterpreter program using the config file in the E2eFileInterpreter binaries directory.
 
-`E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64/config.json`
+ `E2EFileInterpreter/E2EFileInterpreter/bin/Debug/netcoreapp3.1/win-x64/config.json`
 
 5. Configure the E2eToDicomWorkerService Windows Service using the config file in the E2eFileInterpreter Windows Service binaries directory.
 
-`E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64/config.json`
+ `E2eToDicomWorkerService/E2eToDicomWorkerService/bin/Debug/netcoreapp3.1/win-x64/config.json`
 
 6. Install the E2eToDicomWorkerService Windows Service by running the standard Windows Service Installer using the command:
 
